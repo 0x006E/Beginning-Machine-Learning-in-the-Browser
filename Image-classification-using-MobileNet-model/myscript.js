@@ -10,7 +10,7 @@ function readURL() {
 
         reader.onload = function (e) {
             image.src = e.target.result;
-            ml5.imageClassifier('MobileNet')
+            ml5.imageClassifier('model/model.json')
                 .then(classifier => classifier.classify(image)
                     .then(results => {
                         result.innerText = results[0].label;
